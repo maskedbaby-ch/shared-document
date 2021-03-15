@@ -1,0 +1,12 @@
+core_cm4.h:1626:22:NVIC_EnableIRQ	16	static
+fsl_common.h:212:20:EnableIRQ	16	static
+fsl_adc16.h:363:20:ADC16_EnableDMA	16	static
+fsl_adc16.h:382:20:ADC16_EnableHardwareTrigger	16	static
+fsl_lptmr.h:291:20:LPTMR_SetTimerPeriod	16	static
+fsl_lptmr.h:335:20:LPTMR_StartTimer	24	static
+fsl_dmamux.h:98:20:DMAMUX_EnableChannel	16	static
+fsl_dmamux.h:128:20:DMAMUX_SetSource	24	static
+K64F_ADC_DMA_Demo.c:74:6:ADC0_IRQHandler	4	static
+K64F_ADC_DMA_Demo.c:79:6:EDMA_Callback_0	24	static
+K64F_ADC_DMA_Demo.c:87:6:EDMA_Callback_1	24	static
+K64F_ADC_DMA_Demo.c:100:5:main	112	static

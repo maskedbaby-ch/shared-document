@@ -1,0 +1,38 @@
+<!DOCTYPE HTML SYSTEM>
+<html>
+
+<head>
+<title>KSDK HTTP Server Example</title>
+    <style type="text/css">
+    <!--
+    @import"httpsrv.css";
+    -->
+    </style>
+
+    <script src="request.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        function parse_vars(data)
+        {
+            var elem = document.getElementById("get_response_text");
+            elem.value = data;
+        }
+    </script>
+</head>
+
+<body>
+    <h2>CGI example</h2>
+    <p>
+        This page demonstrates CGI functionality. Control LED
+    </p>
+
+    <div style="text-align: center;">
+        <form name="ex_form" action="post.cgi" method="POST">
+            <input type="radio" name="post_input" value="ON" checked>LED_ON
+			<br> 
+			<input type="radio" name="post_input" value="OFF">LED_OFF
+			<br>
+            <input type="submit" value="POST">
+        </form>
+    </div>
+</html>
