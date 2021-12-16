@@ -1,3 +1,0 @@
-RW_NDEF_T4T.c:63:6:RW_NDEF_T4T_Reset	8	static
-RW_NDEF_T4T.c:69:6:RW_NDEF_T4T_Read_Next	32	static
-RW_NDEF_T4T.c:213:6:RW_NDEF_T4T_Write_Next	32	static

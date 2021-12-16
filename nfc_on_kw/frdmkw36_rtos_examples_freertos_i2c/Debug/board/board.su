@@ -1,6 +1,0 @@
-fsl_clock.h:550:20:CLOCK_EnableClock	24	static
-fsl_clock.h:593:20:CLOCK_SetLpuart0Clock	16	static
-fsl_port.h:338:20:PORT_SetPinMux	24	static
-board.c:24:6:BOARD_InitDebugConsole	16	static
-board.c:41:6:BOARD_SetNMIPinMux	16	static
-board.c:48:6:NMI_Handler	8	static

@@ -1,5 +1,0 @@
-RW_NDEF_T5T.c:45:23:T5T_prepare_read_block	24	static
-RW_NDEF_T5T.c:67:23:T5T_prepare_write_block	32	static
-RW_NDEF_T5T.c:91:6:RW_NDEF_T5T_Reset	8	static
-RW_NDEF_T5T.c:97:6:RW_NDEF_T5T_Read_Next	32	static
-RW_NDEF_T5T.c:188:6:RW_NDEF_T5T_Write_Next	40	static

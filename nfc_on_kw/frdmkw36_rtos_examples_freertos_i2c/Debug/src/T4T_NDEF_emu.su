@@ -1,4 +1,0 @@
-T4T_NDEF_emu.c:49:13:T4T_NDEF_EMU_FillRsp	16	static
-T4T_NDEF_emu.c:75:6:T4T_NDEF_EMU_SetMessage	24	static
-T4T_NDEF_emu.c:84:6:T4T_NDEF_EMU_Reset	8	static
-T4T_NDEF_emu.c:89:6:T4T_NDEF_EMU_Next	48	static
