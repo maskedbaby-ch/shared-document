@@ -1,0 +1,4 @@
+fsl_i2c_freertos.c:11:13:I2C_RTOS_Callback	32	static
+fsl_i2c_freertos.c:20:10:I2C_RTOS_Init	24	static
+fsl_i2c_freertos.c:64:10:I2C_RTOS_Deinit	16	static
+fsl_i2c_freertos.c:74:10:I2C_RTOS_Transfer	24	static

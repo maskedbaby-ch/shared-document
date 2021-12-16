@@ -1,0 +1,96 @@
+/*
+ * Copyright (c) 2015, Freescale Semiconductor, Inc.
+ * Copyright 2016-2018 NXP
+ * All rights reserved.
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
+#include "fsl_debug_console.h"
+#include "board.h"
+#include "fsl_adc16.h"
+
+#include "pin_mux.h"
+#include "clock_config.h"
+/*******************************************************************************
+ * Definitions
+ ******************************************************************************/
+#define DEMO_ADC16_BASE ADC0
+
+/*******************************************************************************
+ * Prototypes
+ ******************************************************************************/
+void scanChannel(ADC_Type *base ,uint8_t startChannel, uint8_t endChannel);
+void initAdc(ADC_Type *base,adc16_config_t *adc16ConfigStruct);
+/*******************************************************************************
+ * Variables
+ ******************************************************************************/
+const uint32_t g_Adc16_12bitFullRange = 4096U;
+
+/*******************************************************************************
+ * Code
+ ******************************************************************************/
+/*!
+ * @brief Main function
+ */
+int main(void)
+{
+    adc16_config_t adc16ConfigStruct;
+    BOARD_InitPins();
+    BOARD_BootClockRUN();
+    BOARD_InitDebugConsole();
+    PRINTF("\r\nADC16 polling Example.\r\n");
+	
+	ADC16_GetDefaultConfig(&adc16ConfigStruct);
+	initAdc(DEMO_ADC16_BASE,&adc16ConfigStruct);
+	initAdc(ADC1,&adc16ConfigStruct);
+	
+    PRINTF("ADC Full Range: %d\r\n", g_Adc16_12bitFullRange);
+    PRINTF("Press any key to get user channel's ADC value ...\r\n");
+    while (1)
+    {
+		GETCHAR();
+		scanChannel(DEMO_ADC16_BASE,12,13);
+		scanChannel(ADC1,10,10);
+    }
+}
+
+
+void initAdc(ADC_Type *base,adc16_config_t *adc16ConfigStruct)
+{
+	assert(base);
+	assert(adc16ConfigStruct);
+    ADC16_Init(base, adc16ConfigStruct);
+    ADC16_EnableHardwareTrigger(base, false); /* Make sure the software trigger is used. */
+#if defined(FSL_FEATURE_ADC16_HAS_CALIBRATION) && FSL_FEATURE_ADC16_HAS_CALIBRATION
+    if (kStatus_Success == ADC16_DoAutoCalibration(base))
+    {
+        PRINTF("ADC16_DoAutoCalibration() Done.\r\n");
+    }
+    else
+    {
+        PRINTF("ADC16_DoAutoCalibration() Failed.\r\n");
+    }
+#endif /* FSL_FEATURE_ADC16_HAS_CALIBRATION */	
+}
+
+
+void scanChannel(ADC_Type *base,uint8_t startChannel, uint8_t endChannel)
+{
+	assert(base);
+	adc16_channel_config_t adc16ChannelConfigStruct;
+	for(uint8_t i = startChannel; i <= endChannel; i++)
+	{
+		adc16ChannelConfigStruct.channelNumber                        = i ;
+		adc16ChannelConfigStruct.enableInterruptOnConversionCompleted = false;
+#if defined(FSL_FEATURE_ADC16_HAS_DIFF_MODE) && FSL_FEATURE_ADC16_HAS_DIFF_MODE
+		adc16ChannelConfigStruct.enableDifferentialConversion = false;		
+#endif /* FSL_FEATURE_ADC16_HAS_DIFF_MODE */
+		ADC16_SetChannelConfig(base, 0, &adc16ChannelConfigStruct);	
+		        while (0U == (kADC16_ChannelConversionDoneFlag &
+                      ADC16_GetChannelStatusFlags(base, 0)));
+		PRINTF("ADC%d channel:%d Value  : %d\r\n",base==ADC0?0:1 ,i , ADC16_GetChannelConversionValue(base, 0));
+	}
+}
+
+

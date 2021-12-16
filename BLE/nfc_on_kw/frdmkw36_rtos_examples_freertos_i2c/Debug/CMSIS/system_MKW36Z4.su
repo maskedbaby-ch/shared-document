@@ -1,0 +1,3 @@
+system_MKW36Z4.c:85:6:SystemInit	8	static
+system_MKW36Z4.c:99:6:SystemCoreClockUpdate	16	static
+system_MKW36Z4.c:189:29:SystemInitHook	8	static

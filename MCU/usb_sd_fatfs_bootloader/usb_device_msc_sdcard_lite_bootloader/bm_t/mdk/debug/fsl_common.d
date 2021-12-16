@@ -1,0 +1,17 @@
+debug\fsl_common.o: ../../../../../../devices/MK64F12/drivers/fsl_common.c
+debug\fsl_common.o: ../../../../../../devices/MK64F12/drivers/fsl_common.h
+debug\fsl_common.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+debug\fsl_common.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+debug\fsl_common.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+debug\fsl_common.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+debug\fsl_common.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+debug\fsl_common.o: ../../../../../../devices/MK64F12/fsl_device_registers.h
+debug\fsl_common.o: ../../../../../../devices/MK64F12/MK64F12.h
+debug\fsl_common.o: ../../../../../../CMSIS/Include/core_cm4.h
+debug\fsl_common.o: ../../../../../../CMSIS/Include/cmsis_version.h
+debug\fsl_common.o: ../../../../../../CMSIS/Include/cmsis_compiler.h
+debug\fsl_common.o: ../../../../../../CMSIS/Include/cmsis_armcc.h
+debug\fsl_common.o: ../../../../../../devices/MK64F12/system_MK64F12.h
+debug\fsl_common.o: ../../../../../../devices/MK64F12/MK64F12_features.h
+debug\fsl_common.o: ../../../../../../devices/MK64F12/drivers/fsl_clock.h
+debug\fsl_common.o: ../../../../../../devices/MK64F12/drivers/fsl_common.h

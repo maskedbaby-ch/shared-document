@@ -1,0 +1,6 @@
+P2P_NDEF.c:114:13:ParseLlcp	40	static
+P2P_NDEF.c:165:13:FillLlcp	16	static
+P2P_NDEF.c:171:6:P2P_NDEF_SetMessage	24	static
+P2P_NDEF.c:193:6:P2P_NDEF_RegisterPullCallback	16	static
+P2P_NDEF.c:198:6:P2P_NDEF_Reset	8	static
+P2P_NDEF.c:212:6:P2P_NDEF_Next	104	static
