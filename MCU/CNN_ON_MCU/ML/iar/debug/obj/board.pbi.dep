@@ -1,0 +1,2 @@
+board.pbi: C:\kinetis\ML\ML\board.c C:\kinetis\ML\ML/board.h \
+  C:\kinetis\ML\ML/clock_config.h
