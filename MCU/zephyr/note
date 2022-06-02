@@ -1,0 +1,4 @@
+zephyr 国内下载指令
+west init ~/zephyrproject -m https://gitee.com/AnswerInTheWind/zephyr/ 
+cd ~/zephyrproject
+west update
